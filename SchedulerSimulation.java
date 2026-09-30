@@ -30,14 +30,18 @@ class Process implements Runnable {
     private int timeQuantum; // Time slice (time quantum) allowed per CPU access (in milliseconds)
     private int remainingTime; // Time left for the process to finish its execution
     private int priority;
+    private long waitingTime = 0;
+    private long queueEntryTime;
+    
 
     // Constructor to initialize the process with name, burst time, and time quantum
-    public Process(String name, int burstTime, int timeQuantum) {
+    public Process(String name, int burstTime, int timeQuantum, int priority) {
         this.name = name;
         this.burstTime = burstTime;
         this.timeQuantum = timeQuantum;
         this.remainingTime = burstTime; // Initially, remaining time is equal to the burst time
         this.priortiy = priority;
+        
     }
 
     // This method will be called when the thread for this process is started
@@ -138,6 +142,18 @@ class Process implements Runnable {
     public int getPriority() {
         return priority;
     }
+    public long getWaitingTime() {
+        return waitingTime;
+    }
+    public long getTurnaroundTime(){
+        return waitingTime + burstTime;
+    }
+    public void markQueueEntry(){
+        queueEntryTime = System.currenTimeMillis();
+    }
+    public void updateWaitingTime(){
+        waitingTime += System.currentTimeMillis() - queueEntryTime;
+    }
     public int getRemainingTime() {
         return remainingTime;
     }
@@ -169,6 +185,7 @@ public class SchedulerSimulation {
         
         // Map to associate each thread with its respective process object
         Map<Thread, Process> processMap = new HashMap<>();
+        LinkedList<Process> allProcesses = new LinkedList<>();
         
         // Print simulation header with elegant formatting
         System.out.println("\n" + Colors.BOLD + Colors.BRIGHT_CYAN + 
@@ -204,6 +221,7 @@ public class SchedulerSimulation {
             int priority = 1 + random.nextInt(10);
             // Create a new process object with a unique name, burst time, and the defined time quantum
             Process process = new Process("P" + i, burstTime, timeQuantum, priority);
+            allProcesses.add(process);
             
             // Add the process to the ready queue and the map
             addProcessToQueue(process, processQueue, processMap);
@@ -225,6 +243,8 @@ public class SchedulerSimulation {
         while (!processQueue.isEmpty()) {
             // Get the next thread from the queue (FIFO)
             Thread currentThread = processQueue.poll(); // Dequeues the next thread
+            Process currentProcess = processMap.get(currentThread);
+            currentProcess.updateWaitingTime();
             
             // Print the current process queue (list of process IDs in the queue)
             System.out.println(Colors.BOLD + Colors.MAGENTA + "┌─ Ready Queue " + "─".repeat(65) + Colors.RESET);
@@ -281,6 +301,15 @@ public class SchedulerSimulation {
                           "                     ✓  ALL PROCESSES COMPLETED  ✓                            " + 
                           Colors.RESET + Colors.BOLD + Colors.BRIGHT_GREEN + "║" + Colors.RESET);
         System.out.println("Total Context Switches: " +contextSwitchCount);
+        System.out.println("\nProcess Name\tBurst Time\tWaiting Time\tTurnaround Time");
+           for (Process p : allProcesses) {
+            System.out.println(
+                p.getName()+ "\t\t"+
+                p.getBurstTime() + "\t\t"+
+                p.getWaitingTime() +"\t\t"+
+                p.getTurnaroundTime()
+                );
+        }
         System.out.println(Colors.BOLD + Colors.BRIGHT_GREEN + 
                           "╚════════════════════════════════════════════════════════════════════════════════╝" + 
                           Colors.RESET + "\n");
@@ -294,6 +323,7 @@ public class SchedulerSimulation {
         
         // Add the thread to the ready queue
         processQueue.add(thread);
+        process.markQueueEntry();
         
         // Map the thread to the process, so we can track the process associated with each thread
         processMap.put(thread, process);
