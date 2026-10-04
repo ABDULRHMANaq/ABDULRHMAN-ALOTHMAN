@@ -165,7 +165,7 @@ class Process implements Runnable {
 }
 
 public class SchedulerSimulation {
-    private static int contextSwichCount = 0;
+    private static int contextSwitchCount = 0;
     public static void main(String[] args) {
         // ⚠️ IMPORTANT: Put your student ID here to seed the random number generator
         // This makes your output unique to you - DO NOT forget to change this!
