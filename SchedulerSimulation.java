@@ -40,7 +40,7 @@ class Process implements Runnable {
         this.burstTime = burstTime;
         this.timeQuantum = timeQuantum;
         this.remainingTime = burstTime; // Initially, remaining time is equal to the burst time
-        this.priortiy = priority;
+        this.priority = priority;
         
     }
 
@@ -149,7 +149,7 @@ class Process implements Runnable {
         return waitingTime + burstTime;
     }
     public void markQueueEntry(){
-        queueEntryTime = System.currenTimeMillis();
+        queueEntryTime = System.currentTimeMillis();
     }
     public void updateWaitingTime(){
         waitingTime += System.currentTimeMillis() - queueEntryTime;
