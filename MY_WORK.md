@@ -109,88 +109,83 @@
 
 ## Example Entry (do not copy it, write your own)
 
-### Entry 1 - [September 22, 2026, 2:30 PM]
-**What I did**: Forked the repository and set up my student ID
+### Entry 1 - [September 29, 2026, 8 pm]
+**What I did**:
 
-**Details**:
-- Created GitHub account with university email
-- Forked the starter repository and renamed it
-- Changed student ID on line 150 to my actual ID (441234567)
-- Compiled and ran the program successfully
-- Committed and pushed: `Set my student ID: 441234567`
+**Details**: 
 
-**Challenges**: Had to install JDK first because `javac` wasn't recognized
+**Challenges**: 
 
-**Solution**: Downloaded JDK 17 and set the PATH variable
+**Solution**: 
 
-**Time spent**: 30 minutes
+**Time spent**: 
 
 ---
 
 ## Your Development Log
 
-### Entry 1 - [Date and Time]
-**What I did**:
+### Entry 1 - [September 29 , 2026, 8pm]
+**What I did**: i changed the id and i wrote my id
 
-**Details**:
+**Details**: i open the file schedulerSimulation and changed the student id to my id
 
-**Challenges**:
+**Challenges**: ineeded to find where the id located in the code
 
-**Solution**:
+**Solution**: i found the id inside the main method
 
-**Time spent**:
-
----
-
-### Entry 2 - [Date and Time]
-**What I did**:
-
-**Details**:
-
-**Challenges**:
-
-**Solution**:
-
-**Time spent**:
+**Time spent**: 15 minute
 
 ---
 
-### Entry 3 - [Date and Time]
-**What I did**:
+### Entry 2 - [september 29 and Time]
+**What I did**: i add priority to each process
 
-**Details**:
+**Details**: i add random priority from 1-10 for each process and printed in the ready queue
 
-**Challenges**:
+**Challenges**: i needed to know where to add the priority in the code
 
-**Solution**:
+**Solution**: i add  a random priority from 1 to 10 foe each process
 
-**Time spent**:
+**Time spent**: 35 minutes
+
+---
+
+### Entry 3 - [september30 and 6;30 pm]
+**What I did**: I add a context switch counte
+
+**Details**: I add  a counter to count how many times a new process starts running
+
+**Challenges**: i needed to know where increase the counter in the code
+
+**Solution**: i increased the counter every time a new process starts runnuing
+
+**Time spent**: 25 minutes
 
 ---
 
 ### Entry 4 - [Date and Time]
-**What I did**:
+**What I did**:  I add waiting time tracking
 
-**Details**:
+**Details**:I addethe waiting time for each process and calculated the turnaround time
 
-**Challenges**:
+**Challenges**: I needed to know how to calculate the waiting time
 
-**Solution**:
+**Solution**: I used System.currentTimeMillis() to calculate how long each process wait
 
-**Time spent**:
+**Time spent**: 45 minutes
 
 ---
 
 ### Entry 5 - [Date and Time]
-**What I did**:
+**What I did**: : I tested the program and checked the output
 
-**Details**:
+**Details**: I ran the program and checked 
 
-**Challenges**:
+**Challenges**:I had an error with the context switch counter
 
-**Solution**:
+**Solution**: I fixed the variable name and ran the program again
 
-**Time spent**:
+**Time spent**: 15 minutes
 
 ---
 
@@ -211,13 +206,14 @@
 
 > 💡 **TIP:** Fill this in **last**, after all entries are written.
 
-**Total time spent on assignment**: [X hours]
+**Total time spent on assignment**: [2.5 hours]
 
-**Most challenging part**:
+**Most challenging part**: Calculating the waiting time for each process
 
-**Most interesting learning**:
+**Most interesting learning**:  Learning how the context switch works and how to count it
 
-**What I would do differently next time**:
+**What I would do differently next time**:  I would test the code after adding each feature instead of testing everything at the end
+
 
 ---
 
