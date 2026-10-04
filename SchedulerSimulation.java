@@ -40,7 +40,7 @@ class Process implements Runnable {
         this.burstTime = burstTime;
         this.timeQuantum = timeQuantum;
         this.remainingTime = burstTime; // Initially, remaining time is equal to the burst time
-        this.priortiy = priority;
+        this.priority = priority;
         
     }
 
@@ -165,7 +165,7 @@ class Process implements Runnable {
 }
 
 public class SchedulerSimulation {
-    private static int contextSwichCount = 0;
+    private static int contextSwitchCount = 0;
     public static void main(String[] args) {
         // ⚠️ IMPORTANT: Put your student ID here to seed the random number generator
         // This makes your output unique to you - DO NOT forget to change this!
