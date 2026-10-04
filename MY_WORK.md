@@ -233,7 +233,7 @@
 
 **Your Answer:** *(5-7 sentences)*
 
-[Write your answer here.]
+[I  learned how threads work in Java. I learned how to start a thread and wait for it to finish. I saw how each process gets time to run. When the time is finished, the process goes back to the ready queue if it is not completed. I also learned how context switches work between processes. In my output, I got 39 context switches.]
 
 ## Question 2: What was the most challenging part of this assignment?
 
