@@ -241,7 +241,7 @@
 
 **Your Answer:** *(5-7 sentences)*
 
-[Write your answer here.]
+The most challenging part was the context switch counter At first I did not know where to add the counter I needed to understand when a context switch happens I added the counter before each process starts running I also had a problem with the variable name After fixing it the program worked correctly]
 
 ## Question 3: How did you overcome the challenges you faced?
 
@@ -249,7 +249,7 @@
 
 **Your Answer:** *(5-7 sentences)*
 
-[Write your answer here.]
+[I tried to solve the problems by reading the code again I checked the instructions when I did not understand something I worked on each part one by one I checked my code after making changes Then I ran the program to see if it worked. This helped me finish the assignment]
 
 ## Question 4: How can you apply multithreading concepts in real-world applications?
 
@@ -257,7 +257,7 @@
 
 **Your Answer:** *(5-7 sentences)*
 
-[Write your answer here.]
+Multithreading is useful in many applications. It helps a program do different tasks. For example, YouTube can play a video while I use other features. It can also load other parts of the app at the same time. This can make the app work better. I learned that threads are useful in real applications.
 
 ### Optional: What would you like to learn more about?
 
@@ -289,7 +289,7 @@
 
 **Your Answer:** *(3-5 sentences)*
 
-[Write your answer here.]
+[A process is a running program. A thread is a part of a process. Threads can share memory and are faster to create. In this assignment, we used threads to run the processes.]
 
 ## Question 2: Ready Queue Behavior
 
@@ -301,15 +301,15 @@
 
 **Your Answer:** *(3-5 sentences)*
 
-[Write your answer here.]
+[If a process does not finish in its time quantum, it goes back to the ready queue. It waits for another turn to run again. For example, P1 was added back to the ready queue two times before it finished. This makes the scheduling fair for all processes]
 
 Example from my output:
-```
-[Paste a relevant snippet from your program output here showing a process being re-queued]
-```
+`P1 yields CPU for context switch
+P1 added to ready queue │ Burst time: 6280ms | Priority: 10
+
 
 **Explanation of example:**
-[Explain what is happening in the output snippet you pasted.]
+P1 did not finish in its time quantum. It still had time remaining, so it left the CPU. Then P1 was added back to the ready queue to wait for another turn.]
 
 ## Question 3: Thread Lifecycle
 
@@ -319,15 +319,15 @@ Example from my output:
 
 **Your Answer:** *(3-5 sentences overall; one short explanation per state)*
 
-1. **New**: [When is P1 in the New state?]
+1. **New**: [ P1 is in the New state when the thread is created.]
 
-2. **Runnable**: [When does P1 become Runnable?]
+2. **Runnable**: [P1 becomes Runnable when Thread.start() is called.]
 
-3. **Running**: [When is P1 Running?]
+3. **Running**: [P1 is Running when it starts executing]
 
-4. **Waiting**: [When and why would a thread be Waiting?]
+4. **Waiting**: [The main thread waits when Thread.join() is called.]
 
-5. **Terminated**: [When is P1 Terminated?]
+5. **Terminated**: [P1 is Terminated when it finishes running.]
 
 ## Question 4: Real-World Applications
 
@@ -337,32 +337,32 @@ Example from my output:
 
 **Your Answer:** *(3-5 sentences per example)*
 
-### Example 1 (operating-system level): [Name of scenario]
+### Example 1 (operating-system level): [CPU Scheduling]
 
 **Description**:
-[Describe the real-world scenario.]
+[The operating system has many processes that need to use the CPU. Each process gets a time quantum. The CPU switches to another process when its turn ends.]
 
 **Why Round-Robin works well here**:
-[Fairness, responsiveness, predictability?]
+[Round-Robin gives every process a chance to run. This makes CPU scheduling fair]
 
-### Example 2: [Name of application/scenario]
+### Example 2: [Web Browser]
 
 **Description**:
-[Describe the real-world scenario or application.]
+[ web browser can have many tasks running. Each task can get time to run. The system can switch between the tasks.]
 
 **Why Round-Robin works well here**:
-[Fairness, responsiveness, predictability?]
+[Round-Robin gives each task a chance to run. This can help the browser stay responsive]
 
 ## Summary
 
 **Key concepts I understood through these questions:**
-1.
-2.
-3.
+1.Threads and processes
+2.Round-Robin scheduling
+3.Thread lifecycle
 
 **Concepts I need to study more:**
-1.
-2.
+1.Waiting time
+2.Context switching
 
 ---
 
